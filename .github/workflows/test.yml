@@ -1,0 +1,13 @@
+name: T9e - Allowlist entry is @master, SHA used is NOT reachable from main
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call action with full SHA that is NOT reachable from homebrew/actions main branch (closed PR #963 head)
+        uses: homebrew/actions/setup-homebrew@0b000f2baf4eadb5730ec15c1cf2308a4554b32c
+        continue-on-error: true
